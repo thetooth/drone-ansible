@@ -23,6 +23,4 @@ _testmain.go
 *.test
 *.prof
 
-drone-ansible
-
 .DS_Store
