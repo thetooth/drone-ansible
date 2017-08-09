@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -110,7 +111,7 @@ func trace(cmd *exec.Cmd) {
 // Writes the RSA private key
 func writeKey(config Config) error {
 	if len(config.SSHKey) == 0 {
-		return nil
+		return errors.New("You must supply an SSH key")
 	}
 	home := "/root"
 	u, err := user.Current()
